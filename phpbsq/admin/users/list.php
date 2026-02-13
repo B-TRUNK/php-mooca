@@ -52,6 +52,15 @@ $result = mysqli_query($conn, query: $query);
                         <td><?= $row['name'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['admin'] ? 'Yes' : 'No' ?></td>
+
+                        <td>
+                            <?php if($row['avatar']) { ?>
+                                <img src="../../uploads/<?= $row['avatar'] ?>" style="width: 100px; height: 100px;"/>
+                            <?php } else { ?>
+                                <img src="../../uploads/noimage.png" style="width: 100px; height: 100px;"/>
+                            <?php } ?>
+                        </td>
+
                         <td>
                             <a href="edit.php?id=<?= $row['id'] ?>">Edit</a> | 
                             <a href="delete.php?id=<?= $row['id'] ?>">Delete</a>
