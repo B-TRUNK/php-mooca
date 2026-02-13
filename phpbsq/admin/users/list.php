@@ -23,11 +23,11 @@ $result = mysqli_query($conn, query: $query);
 
 <html>
     <head>
-        <title>Admin :: List Users</title>
+        <title>Admin :: All Users</title>
     </head>
 
     <body>
-        <h1>List Users</h1>
+        <h1>All :: Users</h1>
         <form method="GET">
             <input type="text" name="search" placeholder="Enter {Name} or {Email} to search.."/>
             <input type="submit" value="search">
