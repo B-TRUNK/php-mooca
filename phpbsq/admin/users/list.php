@@ -1,7 +1,15 @@
 <?php
 
-//Connect to DB
+session_start();
+if (isset($_SESSION['id'])){
+    echo '<p> Welcome '.$_SESSION['email'].' <a href="logout.php">Logout</a> </p>';
+}
+else{
+    header("Location: login.php");
+    exit;
+}
 
+//Connect to DB
 $conn = mysqli_connect("localhost", "blog_user", "StrongPass123!", "blog");
 if (! $conn){
     echo mysqli_connect_error();
